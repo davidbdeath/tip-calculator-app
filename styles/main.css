@@ -1,0 +1,18 @@
+:root {
+	--background: #C5E4E7;
+	--app-primary-background: white;
+	--app-secondary-background: #00474B;
+	--accent-color-1: #26C2AE;
+	--font-color-1: var(--app-primary-background);
+	--font-color-2: var(--app-secondary-background);
+	--font-color-3: #5E7A7D;
+	--font-color-4: #9EBBBD;
+	--font-color-5: #7F9D9F;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+body {
+	background: var(--background);
+}
