@@ -1,18 +1,257 @@
+@import url('normalize.css');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
 :root {
-	--background: #C5E4E7;
-	--app-primary-background: white;
-	--app-secondary-background: #00474B;
-	--accent-color-1: #26C2AE;
-	--font-color-1: var(--app-primary-background);
-	--font-color-2: var(--app-secondary-background);
-	--font-color-3: #5E7A7D;
-	--font-color-4: #9EBBBD;
-	--font-color-5: #7F9D9F;
+	/* colors */
+	--margin-clr: #C5E4E7;
+	--primary-clr: white;
+	--secondary-clr: #00474b;
+	--tertiary-clr: #27c2ae;
+	--quaternar-clr: #9ebbbd;
+	--quinary-clr: #5e7a7d;
+	--senary-clr: #f3f9fa;
+	--outline-invalid: #E17052;
+
+	/* font variations */
+	--font: 'Space Mono', monospace;
+	--font-w-reg: 400;
+	--font-w-bold: 700;
 }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+* {
+	font-family: var(--font);
+	/* overflow: hidden; */
+}
 
+/*----------------------------------------------- margin background and app centering */
 body {
-	background: var(--background);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100vh;
+	background: var(--margin-clr);
+}
+
+body > h1 {
+	margin-inline: auto;
+	margin-bottom: 4rem;
+	letter-spacing: 1ch;
+	text-align: center;
+	color: var(--quinary-clr);
+}
+
+
+/*----------------------------------------------- positioning for both columns */
+main {
+	display: flex;
+	flex-shrink: 0;
+	flex-basis: 481px;
+	margin-inline: auto;
+	width: 920px;
+	height: 481px;
+	border-radius: 25px;
+	background: var(--primary-clr);
+}
+
+.input {
+	margin: auto;
+	width: 379px;
+	height: 388px;
+	font-size: 16px;
+}
+
+.input-section {
+	margin-top: 2rem;
+	color: var(--quinary-clr);
+}
+
+.input-section > h2 {
+	font-size: 16px;
+	margin-bottom: .5em;
+}
+
+.input-section:first-child {
+	margin-top: 0;
+}
+
+/* number input styling */
+.input-section > form {
+	display: flex;
+}
+
+/*----------------------------------------------- number input and label formatting */
+.input-form > label {
+	position: relative;
+	left: 1rem;
+	top: 1rem;
+}
+
+.input-form > input {
+	margin-left: -.8rem;
+	padding-inline: 1rem;
+	height: 48px;
+	width: 100%;
+	text-align: right;
+	font-size: 24px;
+	font-weight: 700;
+	color: var(--secondary-clr);
+	border: 0;
+	border-radius: 5px;
+	background: var(--senary-clr);
+}
+
+.input-form > input::placeholder {
+	color: var(--quaternar-clr);
+}
+
+.input-outline {
+	outline: 0;
+}
+
+.input-outline:focus {
+	box-shadow: 0 0 0 2px var(--tertiary-clr);
+}
+
+.input-outline:invalid {
+	box-shadow: 0 0 0 2px var(--outline-invalid);
+}
+
+/* removes number arrows */
+.no-arrows::-webkit-outer-spin-button,
+.no-arrows::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+.no-arrows[type=number] {
+	-moz-appearance: textfield;
+}
+
+/*----------------------------------------------- tip btn group */
+.select-tip-btn-group {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: space-between;
+	margin-block: 1em;
+	width: 100%;
+	height: 112px;
+}
+
+.btn {
+	height: 48px;
+	width: 117px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: 700;
+	color: var(--primary-clr);
+	border: none;
+	border-radius: 5px;
+	background: var(--secondary-clr);
+}
+
+.btn-selected {
+	background: var(--tertiary-clr);
+}
+
+#custom-tip {
+	color: var(--quinary-clr);
+	background: var(--senary-clr);
+}
+
+#custom-tip::placeholder {
+	color: var(--quinary-clr);
+}
+
+/*----------------------------------------------- results section */
+
+.result {
+	display: flex;
+	flex-basis: 413px;
+	margin: auto;
+	height: 417px;
+	width: 413px;
+	color: var(--primary-clr);
+	border-radius: 25px;
+	background: var(--secondary-clr);
+}
+
+.result-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 337px;
+	margin: auto;
+}
+
+.result-section {
+	display: flex;
+	justify-content: space-between;
+	width: 333px;
+	height: 71px;
+}
+
+.result-section > div {
+	flex-grow: 0;
+	flex-shrink: 0;
+}
+
+.result-section > div > h2 {
+	font-size: 16px;
+	margin-top: 1rem;
+	margin-bottom: .5rem;
+
+}
+
+.result-section > div > p {
+	color: var(--quaternar-clr);
+	margin-block: 0;
+	font-size: 13px;
+	font-weight: var(--font-w-bold);
+}
+
+.result-form {
+	display: flex;
+	justify-content: flex-end;
+	min-width: 0;
+}
+
+.result-form > label {
+	display: none;
+}
+
+.result-form > input {
+	min-width: 0;
+	text-align: right;
+	font-size: 48px;
+	font-weight: var(--font-w-bold);
+	color: var(--tertiary-clr);
+	border: none;
+	background: var(--secondary-clr);
+}
+
+.result-form > input::placeholder {
+	color: var(--tertiary-clr);
+}
+
+.result-form > input::placeholder {
+	color: var(--result-out-txtColor);
+}
+
+#btn-reset {
+	background: var(--tertiary-clr);
+	color: var(--secondary-clr);
+	margin-inline: auto;
+	width: 333px;
+	height: 48px;
+}
+
+/* from frontend mentor */
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	margin-top: 1rem;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
 }
