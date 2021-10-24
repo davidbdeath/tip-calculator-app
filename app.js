@@ -15,7 +15,6 @@ const calcB = {
 	tipCalc: NaN,
 	people: NaN
 };
-
 const dollarUS = Intl.NumberFormat("en-US", {
 	style: "currency",
 	currency: "USD",
@@ -28,7 +27,6 @@ const invalidNumPeople = () => {
 		zero.textContent = '';
 	}
 }
-
 
 const filterInputFieldText = () => {
 	inputs.forEach((input) => {
@@ -67,14 +65,16 @@ const setTip = () => {
 			reset(btn)
 			btn.classList.add('btn-selected');
 			calcB.tipPercent = parseFloat(btn.textContent.slice(0, -1)) / 100;
-			console.log(calcB);
 			customTip.value = null;
+			tipAmountPer();
+			totalPer();
+			console.log(calcB);
 		})
 	})
 }
 
 const tipAmountPer = () => {
-	if (calcB.people > 0) {
+	if (calcB.people > 0 && calcB.tipPercent > 0) {
 		calcB.tipCalc = calcB.bill * calcB.tipPercent;
 		tipAmount.value = dollarUS.format(calcB.tipCalc / calcB.people);
 		tipAmount.size = tipAmount.value.toString().length;
@@ -84,7 +84,7 @@ const tipAmountPer = () => {
 }
 
 const totalPer = () => {
-	if (calcB.people > 0) {
+	if (calcB.people > 0 && calcB.tipPercent > 0) {
 		total.value = dollarUS.format((calcB.bill + calcB.tipCalc) / calcB.people);
 		total.size = total.value.toString().length;
 	} else {
@@ -103,7 +103,7 @@ const setCalcBuffer = (objElm, srcInput) => {
 		tipAmountPer();
 		totalPer();
 		invalidNumPeople();
-		console.log(calcB)
+		console.log(calcB);
 	})
 }
 
