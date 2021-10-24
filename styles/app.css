@@ -161,6 +161,9 @@ main {
 }
 
 #custom-tip {
+	width: 117px;
+	height: 48px;
+	padding: 0;
 	color: var(--quinary-clr);
 	background: var(--senary-clr);
 }
@@ -274,17 +277,23 @@ main {
 	.input {
 		width: 311px;
 		height: 436px;
-		margin-bottom: 1rem;
+		margin-bottom: 4rem;
 	}
 
 	.select-tip-btn-group {
 		height: 176px;
+		width: 311px;
 	}
 
 	.btn {
+		height: 48px;
 		width: 147px;
 	}
 
+	#custom-tip {
+		height: 48px;
+		width: 147px;
+	}
 	.result {
 		max-width: 327px;
 		height: 257px;
