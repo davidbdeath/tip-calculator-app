@@ -1,5 +1,6 @@
 const buttons = [...document.querySelectorAll('button')];
 const inputs = [...document.querySelectorAll('input')];
+const zero = document.querySelector('#zero');
 // text inputs
 const billAmount = document.getElementById('bill-amount');
 const customTip = document.getElementById('custom-tip');
@@ -19,6 +20,15 @@ const dollarUS = Intl.NumberFormat("en-US", {
 	style: "currency",
 	currency: "USD",
 });
+
+const invalidNumPeople = () => {
+	if (numberOfPeople.value === '0') {
+		zero.textContent = "Can't be zero";
+	} else {
+		zero.textContent = '';
+	}
+}
+
 
 const filterInputFieldText = () => {
 	inputs.forEach((input) => {
@@ -92,9 +102,12 @@ const setCalcBuffer = (objElm, srcInput) => {
 		}
 		tipAmountPer();
 		totalPer();
+		invalidNumPeople();
 		console.log(calcB)
 	})
 }
+
+
 
 filterInputFieldText();
 setCalcBuffer('bill', billAmount);

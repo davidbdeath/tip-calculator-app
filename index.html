@@ -6,17 +6,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<link rel="stylesheet" href="styles/app.css">
 
-<!----------------------------------------------- css stylesheets ----------------------------------------------->
-	<link rel="stylesheet" href="styles/main.css">
 	<title>Frontend Mentor | Tip calculator app</title>
 </head>
 
 <body>
 	<h1>SPLI<br>TTER</h1>
 	<main>
-<!----------------------------------------------- input section ----------------------------------------------->
-<!----------------------------------------------- Bill Amount ----------------------------------------------->
+		<!-- bill section -->
 		<section class="input">
 			<div class="input-section">
 				<h2 class="">Bill</h2>
@@ -28,9 +26,9 @@
 					</label>
 					<input class="no-arrows input-outline" id="bill-amount" type="number" min="0" step=".01" name="bill-amount" placeholder="0" autofocus>
 				</form>
-
+				<!-- tip section -->
 			</div>
-<!----------------------------------------------- tip selection ----------------------------------------------->
+
 			<div class="input-section">
 				<h2 class="">Select Tip %</h2>
 				<div class="select-tip-btn-group">
@@ -40,14 +38,14 @@
 					<button class="btn">25%</button>
 					<button class="btn">50%</button>
 					<form action="#" onsubmit="return false">
-						<input class="btn no-arrows input-outline" id="custom-tip" type="number" max="100" placeholder="Custom">
+						<input class="btn input-outline" id="custom-tip" type="number" max="100" placeholder="Custom">
 					</form>
 				</div>
 			</div>
 
-<!----------------------------------------------- number of people ----------------------------------------------->
+			<!-- number of people -->
 			<div class="input-section">
-				<h2 class="">Number of People</h2>
+				<h2 class="">Number of People<span id="zero"></span></h2>
 				<form class="input-form" name="number-of-people" action="#" method="post" onsubmit="return false">
 					<label class="input-label" for="number-of-people">
 						<svg xmlns="http://www.w3.org/2000/svg" width="13" height="16">
@@ -59,31 +57,32 @@
 			</div>
 		</section>
 
-<!-----------------------------------------------result section ----------------------------------------------->
+		<!-- result section -->
 		<section class="result">
 			<div class="result-container">
-				<div class="result-section">
-					<div>
-						<h2 class=" result-h2">Tip Amount</h2>
-						<p class="font-tertiary result-p">/ person</p>
+				<div>
+					<div class="result-section">
+						<div>
+							<h2 class=" result-h2">Tip Amount</h2>
+							<p class="font-tertiary result-p">/ person</p>
+						</div>
+						<form class="result-form" action="#" method="post" onsubmit="return false">
+							<label for="tip-amount"></label>
+							<input class="" id="tip-amount" type="text" name="tip-amountt" size="5" maxlength="9" placeholder="$0.00" readonly>
+						</form>
 					</div>
-					<form class="result-form" action="#" method="post" onsubmit="return false">
-						<label for="tip-amount"></label>
-						<input class="no-arrows" id="tip-amount" type="text" name="tip-amountt" size="5" maxlength="9" placeholder="$0.00" readonly>
-					</form>
-				</div>
 
-				<div class="result-section">
-					<div>
-						<h2 class=" result-h2">Total</h2>
-						<p class="font-tertiary result-p">/ person</p>
+					<div class="result-section">
+						<div>
+							<h2 class=" result-h2">Total</h2>
+							<p class="font-tertiary result-p">/ person</p>
+						</div>
+						<form class="result-form" action="#" method="post" onsubmit="return false">
+							<label for="total"></label>
+							<input class=" result-input" id="total" type="text" name="total" size="5" maxlength="9" placeholder="$0.00" readonly>
+						</form>
 					</div>
-					<form class="result-form" action="#" method="post" onsubmit="return false">
-						<label for="total"></label>
-						<input class="no-arrows result-input" id="total" type="text" name="total" size="5" maxlength="9" placeholder="$0.00" readonly>
-					</form>
 				</div>
-
 				<button class="btn btn-reset" id="btn-reset">RESET</button>
 			</div>
 		</section>
