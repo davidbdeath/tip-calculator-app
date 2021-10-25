@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [davidbdeath github](https://github.com/davidbdyer/tip-calculator-app)
-- Live Site URL: [tip calculator app](https://davidbdyer.github.io/tip-calculator-app/)
+- Solution URL: [davidbdeath github](https://github.com/davidbdeath/tip-calculator-app)
+- Live Site URL: [tip calculator app](https://davidbdeath.github.io/tip-calculator-app/)
 
 ## My process
 
