@@ -15,6 +15,7 @@ const calcB = {
 	tipCalc: NaN,
 	people: NaN
 };
+// currency format
 const dollarUS = Intl.NumberFormat("en-US", {
 	style: "currency",
 	currency: "USD",
@@ -73,6 +74,15 @@ const setTip = () => {
 	})
 }
 
+const customTipHighlight = () => {
+	console.log(customTip.value);
+	if (customTip.value > 0) {
+		customTip.style.backgroundColor = 'var(--tertiary-clr)';
+	} else {
+		customTip.style.backgroundColor = 'var(--senary-clr)'
+	}
+}
+
 const tipAmountPer = () => {
 	if (calcB.people > 0 && calcB.tipPercent > 0) {
 		calcB.tipCalc = calcB.bill * calcB.tipPercent;
@@ -97,6 +107,7 @@ const setCalcBuffer = (objElm, srcInput) => {
 		if (objElm == 'tipPercent') {
 			calcB[objElm] = srcInput.value / 100;
 			removeSelected();
+			customTipHighlight();
 		} else {
 			calcB[objElm] = parseFloat(srcInput.value);
 		}

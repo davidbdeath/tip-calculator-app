@@ -156,10 +156,6 @@ main {
 	background: var(--secondary-clr);
 }
 
-.btn-selected {
-	background: var(--tertiary-clr);
-}
-
 #custom-tip {
 	width: 117px;
 	height: 48px;
@@ -170,6 +166,10 @@ main {
 
 #custom-tip::placeholder {
 	color: var(--quinary-clr);
+}
+
+.btn-selected, .btn:hover, #custom-tip:hover {
+	background: var(--tertiary-clr);
 }
 
 /* results section */
