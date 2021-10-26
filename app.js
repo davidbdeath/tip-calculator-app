@@ -22,7 +22,7 @@ const dollarUS = Intl.NumberFormat("en-US", {
 });
 
 const invalidNumPeople = () => {
-	if (numberOfPeople.value === '0') {
+	if (numberOfPeople.value < '1' && numberOfPeople.value != '') {
 		zero.textContent = "Can't be zero";
 	} else {
 		zero.textContent = '';
@@ -84,7 +84,7 @@ const customTipHighlight = () => {
 }
 
 const tipAmountPer = () => {
-	if (calcB.people > 0 && calcB.tipPercent > 0) {
+	if ((numberOfPeople.value >= '1' && numberOfPeople.value != '') && calcB.tipPercent > 0) {
 		calcB.tipCalc = calcB.bill * calcB.tipPercent;
 		tipAmount.value = dollarUS.format(calcB.tipCalc / calcB.people);
 		tipAmount.size = tipAmount.value.toString().length;
@@ -94,7 +94,7 @@ const tipAmountPer = () => {
 }
 
 const totalPer = () => {
-	if (calcB.people > 0 && calcB.tipPercent > 0) {
+	if ((numberOfPeople.value >= '1' && numberOfPeople.value != '') && calcB.tipPercent > 0) {
 		total.value = dollarUS.format((calcB.bill + calcB.tipCalc) / calcB.people);
 		total.size = total.value.toString().length;
 	} else {
