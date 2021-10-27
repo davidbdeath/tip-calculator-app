@@ -22,7 +22,13 @@ const dollarUS = Intl.NumberFormat("en-US", {
 });
 
 const invalidNumPeople = () => {
-	if (numberOfPeople.value < '1' && numberOfPeople.value != '') {
+	let numberOfPeopleFloat = parseFloat(numberOfPeople.value);
+	let numberOfPeopleInt = parseInt(numberOfPeople.value);
+	if ((numberOfPeopleFloat != numberOfPeopleInt) && numberOfPeople.value != '') {
+		zero.textContent = "No partial people"
+		tipAmount.value = null;
+		total.value = null;
+	} else if (numberOfPeople.value < '1' && numberOfPeople.value != '') {
 		zero.textContent = "Can't be zero";
 	} else {
 		zero.textContent = '';

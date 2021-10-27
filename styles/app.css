@@ -116,11 +116,11 @@ main {
 }
 
 #zero {
-	position: relative;
-	left: 10ch;
+	float: right;
 	text-align: right;
 	color: var(--outline-invalid);
-	font-size: 16px;
+	font-size: 13px;
+	font-weight: --font-w-reg;
 }
 
 /* removes number arrows */
