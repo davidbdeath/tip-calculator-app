@@ -164,6 +164,7 @@ main {
 	background: var(--senary-clr);
 }
 
+
 #custom-tip::placeholder {
 	color: var(--quinary-clr);
 }
